@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>ROCK YOUR DRUM!</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <h1>Hit the drum</h1>
+      <img id ="imageOne" src ="jannedrum.png" onclick = "changeColor(); play();"/>
+      <audio id="audio" src="rockdrum.m4a"></audio>
+
+        <script>
+            var image =  document.getElementById("imageOne");
+
+            function changeColor()
+            {
+                if (image.getAttribute('src') == "jannedrum.png")
+                {
+                    image.src = "jannedrumhit.png";
+                }
+                else
+                {
+                    image.src = "jannedrum.png";
+                }
+            }
+        </script>
+        <script>
+          function play() {
+            var audio = document.getElementById("audio");
+            if (audio.paused) {
+                audio.play();
+            }else{
+                audio.currentTime = 0
+            }
+          }
+        </script>
+    </div>
+
+
+  </body>
+
+</html>
